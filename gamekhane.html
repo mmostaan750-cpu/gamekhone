@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>گیم‌خونه | اخبار، نقد و بازی</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;900&display=swap">
+<style>
+:root{--bg:#F6F3FF;--ink:#17123A;--card:#fff;--blue:#2B3BFF;--yellow:#FFD23F;--pink:#FF5C8A;--mute:#5E5A80;--line:#D9D3F5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#110D2E;--ink:#F1EEFF;--card:#1B1647;--mute:#A9A3D6;--line:#2E2766}}
+:root[data-theme="dark"]{--bg:#110D2E;--ink:#F1EEFF;--card:#1B1647;--mute:#A9A3D6;--line:#2E2766}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.8}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:900;font-size:1.4rem}
+.logo b{background:var(--yellow);color:#17123A;padding:0 8px;border-radius:6px;margin-inline-end:6px}
+nav{display:flex;gap:20px;font-weight:600;color:var(--mute)}
+nav a:hover{color:var(--blue)}
+.hero{background:var(--blue);color:#fff;border-radius:28px;padding:40px 32px;display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.3;margin:0 0 14px}
+.hero p{margin:0 0 20px;max-width:46ch;opacity:.92}
+.btn{display:inline-block;border:0;background:var(--yellow);color:#17123A;font:inherit;font-weight:900;padding:10px 24px;border-radius:12px;cursor:pointer}
+.btn:hover{background:#fff}
+.game{background:rgba(0,0,0,.25);border-radius:20px;padding:18px;text-align:center}
+.stats{display:flex;justify-content:space-between;font-weight:600;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.cell{aspect-ratio:1;border:0;border-radius:14px;background:rgba(255,255,255,.14);font-size:2rem;cursor:pointer;color:#fff}
+.cell.on{background:var(--yellow);color:#17123A;transform:scale(1.04)}
+#msg{min-height:1.8em;font-weight:600}
+section{padding:48px 0 0}
+h2{font-size:1.6rem;font-weight:900;margin:0 0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:20px}
+.card .tag{display:inline-block;font-size:.8rem;font-weight:600;background:var(--pink);color:#fff;padding:0 10px;border-radius:99px}
+.card h3{margin:10px 0 6px;font-size:1.1rem}
+.card p{margin:0;color:var(--mute);font-size:.95rem}
+.card:hover{border-color:var(--blue)}
+ol.top{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+ol.top li{display:flex;align-items:center;gap:16px;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:12px 18px}
+ol.top .n{font-weight:900;font-size:1.5rem;color:var(--blue);min-width:2ch}
+ol.top .s{margin-inline-start:auto;font-weight:900;background:var(--yellow);color:#17123A;border-radius:10px;padding:0 12px}
+footer{margin-top:56px;padding:28px 0 36px;border-top:2px solid var(--line);color:var(--mute);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding:28px 20px}nav{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:600;padding:2px 16px;border-radius:99px;cursor:pointer}
+.chip.act{background:var(--blue);border-color:var(--blue);color:#fff}
+#q{width:100%;font:inherit;padding:10px 16px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--ink);margin-bottom:12px}
+.price{font-weight:900;color:var(--blue);margin:8px 0}
+.card .btn{padding:4px 16px;font-size:.9rem}
+.pl{color:var(--mute);font-size:.85rem}
+.vid{aspect-ratio:16/9;background:linear-gradient(135deg,var(--blue),var(--pink));border-radius:14px;display:grid;place-items:center;color:#fff;font-size:2.4rem;margin-bottom:10px}
+.rev{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:22px;padding:28px}
+.big{width:110px;height:110px;border-radius:50%;background:var(--yellow);color:#17123A;display:grid;place-items:center;font-size:2.2rem;font-weight:900}
+.bar{display:grid;grid-template-columns:70px 1fr 36px;gap:10px;align-items:center;margin:6px 0;font-size:.9rem}
+.bar i{display:block;height:10px;background:var(--line);border-radius:9px;overflow:hidden}
+.bar i b{display:block;height:100%;background:var(--blue)}
+.cal{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.cal li{display:flex;align-items:center;gap:16px;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:10px 18px}
+.cal .d{background:var(--pink);color:#fff;font-weight:900;border-radius:10px;padding:0 12px;min-width:84px;text-align:center}
+.mini{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:20px;text-align:center}
+.mini .btn{margin:4px}
+#none{display:none;color:var(--mute)}
+@media (max-width:760px){.rev{grid-template-columns:1fr;justify-items:center}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#"><b>گیم</b>خونه</a>
+  <nav><a href="#news">اخبار</a><a href="#store">فروشگاه</a><a href="#videos">ویدیو</a><a href="#review">نقد</a><a href="#calendar">تقویم</a><a href="#play">بازی</a></nav>
+  <button class="btn" id="cart" type="button">سبد خرید: <span id="cc">۰</span></button>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>هر روز یه دلیل جدید برای گیم زدن</h1>
+    <p>خبر، نقد و معرفی بازی‌های کامپیوتر، کنسول و موبایل. کوتاه، بی‌حاشیه و به فارسی روان.</p>
+    <a class="btn" href="#news">آخرین خبرها</a>
+  </div>
+  <div class="game" aria-label="مینی‌بازی">
+    <div class="stats"><span>امتیاز: <b id="score">0</b></span><span>زمان: <b id="time">15</b></span></div>
+    <div class="grid" id="grid"></div>
+    <div id="msg">ستاره‌ها رو بگیر!</div>
+    <button class="btn" id="start">شروع بازی</button>
+  </div>
+</div>
+
+<section id="news">
+  <h2>تازه‌ترین‌ها</h2>
+  <div class="cards">
+    <a class="card" href="#"><span class="tag">خبر</span><h3>جزئیات آپدیت بزرگ فصل جدید</h3><p>نقشه‌ی تازه، سلاح‌های جدید و تغییرات تعادل بازی در یک نگاه.</p></a>
+    <a class="card" href="#"><span class="tag">نقد</span><h3>نقد بازی ماجرایی جهان‌باز</h3><p>داستان خوب، ولی ماموریت‌های فرعی تکراری. ارزش وقتتون رو داره؟</p></a>
+    <a class="card" href="#"><span class="tag">راهنما</span><h3>۱۰ ترفند برای شروع قوی</h3><p>چیزهایی که کاش از ساعت اول بازی می‌دونستیم.</p></a>
+    <a class="card" href="#"><span class="tag">موبایل</span><h3>بهترین بازی‌های سبک و رایگان</h3><p>برای گوشی‌های معمولی و اینترنت ضعیف هم خوب اجرا می‌شن.</p></a>
+  </div>
+</section>
+
+<section id="top">
+  <h2>برترین بازی‌های این ماه</h2>
+  <ol class="top">
+    <li><span class="n">۱</span><span>بازی نقش‌آفرینی فانتزی</span><span class="s">۹.۴</span></li>
+    <li><span class="n">۲</span><span>شوتر تیمی رقابتی</span><span class="s">۹.۱</span></li>
+    <li><span class="n">۳</span><span>بازی مستقل پازل و معمایی</span><span class="s">۸.۸</span></li>
+    <li><span class="n">۴</span><span>مسابقه‌ی ماشین‌سواری آرکید</span><span class="s">۸.۵</span></li>
+  </ol>
+</section>
+<section id="store">
+  <h2>فروشگاه بازی</h2>
+  <input id="q" type="search" placeholder="جستجوی اسم بازی..." aria-label="جستجو">
+  <div class="chips" id="chips">
+    <button class="chip act" data-p="all">همه</button><button class="chip" data-p="pc">کامپیوتر</button><button class="chip" data-p="ps">پلی‌استیشن</button><button class="chip" data-p="xbox">ایکس‌باکس</button><button class="chip" data-p="mobile">موبایل</button>
+  </div>
+  <div class="cards" id="prods">
+    <div class="card prod" data-p="pc ps xbox" data-n="افسانه‌ی سرزمین‌های گمشده"><h3>افسانه‌ی سرزمین‌های گمشده</h3><div class="pl">کامپیوتر، پلی‌استیشن، ایکس‌باکس</div><div class="price">۱,۲۰۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+    <div class="card prod" data-p="pc ps xbox" data-n="نبرد ستاره‌ها"><h3>نبرد ستاره‌ها</h3><div class="pl">کامپیوتر، پلی‌استیشن، ایکس‌باکس</div><div class="price">۹۸۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+    <div class="card prod" data-p="pc" data-n="معمای شب"><h3>معمای شب</h3><div class="pl">کامپیوتر</div><div class="price">۲۴۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+    <div class="card prod" data-p="ps" data-n="سرعت بی‌پایان"><h3>سرعت بی‌پایان</h3><div class="pl">پلی‌استیشن</div><div class="price">۸۵۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+    <div class="card prod" data-p="xbox pc" data-n="قلعه‌ی آتش"><h3>قلعه‌ی آتش</h3><div class="pl">ایکس‌باکس، کامپیوتر</div><div class="price">۷۲۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+    <div class="card prod" data-p="mobile" data-n="جزیره‌ی کوچک"><h3>جزیره‌ی کوچک</h3><div class="pl">موبایل</div><div class="price">رایگان</div><button class="btn add">افزودن به سبد</button></div>
+  </div>
+  <p id="none">بازی‌ای با این مشخصات پیدا نشد.</p>
+</section>
+
+<section id="videos">
+  <h2>ویدیو و تریلر</h2>
+  <div class="cards">
+    <a class="card" href="#"><div class="vid">▶</div><h3>Grand Thft Auto VI</h3><p>۲:۳۵ساعت</p></a>
+    <a class="card" href="#"><div class="vid">▶</div><h3>گیم‌پلی ۱۰ دقیقه‌ای نبرد ستاره‌ها</h3><p>۱۰:۰۰دقیقه</p></a>
+    <a class="card" href="#"><div class="vid">▶</div><h3>معرفی سریع قلعه‌ی آتش</h3><p>۴:۳۰دقیفه</p></a>
+  </div>
+</section>
+
+<section id="review">
+  <h2>نقد کامل: Grand Theft Auto VI </h2>
+  <div class="rev">
+    <div class="big">۹.۶</div>
+    <div>
+      <div class="bar"><span>گیم‌پلی</span><i><b style="width:94%"></b></i><span>۹.۴</span></div>
+      <div class="bar"><span>گرافیک</span><i><b style="width:96%"></b></i><span>۹.۶</span></div>
+      <div class="bar"><span>داستان</span><i><b style="width:90%"></b></i><span>۹.۰</span></div>
+      <div class="bar"><span>موسیقی</span><i><b style="width:95%"></b></i><span>۹.۵</span></div>
+      <p><b>نقاط قوت:</b> دنیای زنده، مبارزه‌ی روان، موسیقی عالی.<br><b>نقاط ضعف:</b> زمان لودینگ و چند ماموریت تکراری.</p>
+    </div>
+  </div>
+</section>
+
+<section id="review">
+ <h2>کنسول مورد نیاز : Grand Theft Auto VI </h2>
+ <div class="rev">
+  <div class="card prod" data-p="pc ps xbox" data-n="افسانه‌ی سرزمین‌های گمشده"><h3>پلی‌استیشن ۵</h3><div class="pl">فناوری جدید از شرکت سونی</div><div class="price">۱۸۰,۰۰۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+  <div class="card prod" data-p="pc ps xbox" data-n="افسانه‌ی سرزمین‌های گمشده"><h3>ایکس باکس سری S</h3><div class="pl">فناوری جدید از شرکت ایکس باکس</div><div class="price">۱۲۰,۰۰۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+  <div class="card prod" data-p="pc ps xbox" data-n="افسانه‌ی سرزمین‌های گمشده"><h3>پلی‌استیشن پرو ۵</h3><div class="pl">فناوری جدید از شرکت سونی</div><div class="price">۳۲۰,۰۰۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+  <div class="card prod" data-p="pc ps xbox" data-n="افسانه‌ی سرزمین‌های گمشده"><h3>ایکس باکس سری X</h3><div class="pl">فناوری جدید از شرکت ایکس باکس</div><div class="price">۱۳۰,۰۰۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+  <div class="card prod" data-p="pc ps xbox" data-n="افسانه‌ی سرزمین‌های گمشده"><h3>پلی‌استیشن اسلیم ۵</h3><div class="pl">فناوری جدید از شرکت سونی</div><div class="price">۱۱۰,۰۰۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
+    <div class="card prod" data-p="pc ps xbox" data-n="افسانه‌ی سرزمین‌های گمشده"><h3> به زودی ... </h3><div class="pl">فناوری های جدیدتر </div><div class="price"> ۰ تومان</div><button class="btn add">به زودی ...</button></div>
+
+ </div>
+
+<section id="calendar">
+  <h2>تقویم عرضه‌ی بازی‌های جدید</h2>
+  <ul class="cal">
+    <li><span class="d" style="background:#1FA85A">۲۸ آبان</span><span>Grand Theft Auto VI</span><span class="pl" style="margin-inline-start:auto">کنسول،ایکس‌باکس</span></li>
+    <li><span class="d">۲۸ آذر</span><span>جزیره‌ی کوچک ۲</span><span class="pl" style="margin-inline-start:auto">موبایل</span></li>
+    <li><span class="d">۱۰ دی</span><span>سرعت بی‌پایان: نسخه‌ی تکمیلی</span><span class="pl" style="margin-inline-start:auto">پلی‌استیشن</span></li>
+    <li><span class="d">۲۵ دی</span><span>قلعه‌ی آتش: بسته‌ی الحاقی</span><span class="pl" style="margin-inline-start:auto">ایکس‌باکس، کامپیوتر</span></li>
+  </ul>
+</section>
+
+<section id="play">
+  <h2>بازی کن</h2>
+  <div class="cards">
+    <div class="mini"><h3>سنگ، کاغذ، قیچی</h3><div><button class="btn rps" data-m="0">✊</button><button class="btn rps" data-m="1">✋</button><button class="btn rps" data-m="2">✌️</button></div><p id="rr">انتخاب کن!</p></div>
+    <div class="mini"><h3>کلیک‌سنج ۵ ثانیه‌ای</h3><button class="btn" id="ck">شروع</button><p id="cr">چند بار می‌تونی کلیک کنی؟</p></div>
+  </div>
+</section>
+</main>
+
+<footer id="contact"><span>© گیم‌خونه</span>
+</span>ارتباط با ما: hello@gamekhane.example
+</span>شماره تماس : 0123456789
+</span></footer>
+</div>
+
+<script>
+(function(){
+  var g=document.getElementById('grid'),cells=[],score=0,left=15,cur=-1,tm=null,mv=null,run=false;
+  for(var i=0;i<9;i++){var b=document.createElement('button');b.className='cell';b.setAttribute('aria-label','خانه '+(i+1));(function(i){b.onclick=function(){hit(i)}})(i);g.appendChild(b);cells.push(b)}
+  function fa(n){return String(n).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]})}
+  function show(){if(cur>=0){cells[cur].classList.remove('on');cells[cur].textContent=''}
+    cur=Math.floor(Math.random()*9);cells[cur].classList.add('on');cells[cur].textContent='★'}
+  function hit(i){if(!run||i!==cur)return;score++;document.getElementById('score').textContent=fa(score);show()}
+  function end(){run=false;clearInterval(tm);clearInterval(mv);if(cur>=0){cells[cur].classList.remove('on');cells[cur].textContent=''}cur=-1;
+    document.getElementById('msg').textContent='تموم شد! امتیاز تو: '+fa(score);document.getElementById('start').textContent='دوباره'}
+  document.getElementById('start').onclick=function(){
+    if(run)return;run=true;score=0;left=15;
+    document.getElementById('score').textContent=fa(0);document.getElementById('time').textContent=fa(left);
+    document.getElementById('msg').textContent='برو!';show();
+    mv=setInterval(show,900);
+    tm=setInterval(function(){left--;document.getElementById('time').textContent=fa(left);if(left<=0)end()},1000)};
+  document.getElementById('time').textContent=fa(15);document.getElementById('score').textContent=fa(0);
+})();
+(function(){
+  function fa(n){return String(n).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]})}
+  var pf='all',q=document.getElementById('q'),ps=document.querySelectorAll('.prod'),cn=0;
+  function ap(){var t=q.value.trim(),n=0;ps.forEach(function(p){var ok=(pf==='all'||p.dataset.p.split(' ').indexOf(pf)>-1)&&p.dataset.n.indexOf(t)>-1;p.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
+  q.oninput=ap;
+  document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('act')});c.classList.add('act');pf=c.dataset.p;ap()}});
+  document.querySelectorAll('.add').forEach(function(b){b.onclick=function(){cn++;document.getElementById('cc').textContent=fa(cn);b.textContent='اضافه شد ✓'}});
+  var N=['سنگ','کاغذ','قیچی'];
+  document.querySelectorAll('.rps').forEach(function(b){b.onclick=function(){var u=+b.dataset.m,c=Math.floor(Math.random()*3),r=u===c?'مساوی':((u-c+3)%3===1?'بردی! 🎉':'باختی');document.getElementById('rr').textContent='تو: '+N[u]+' | من: '+N[c]+' ← '+r}});
+  var ck=document.getElementById('ck'),cr=document.getElementById('cr'),cc=0,on=false;
+  ck.onclick=function(){if(!on){on=true;cc=0;ck.textContent='کلیک کن!';cr.textContent='۵ ثانیه وقت داری';setTimeout(function(){on=false;ck.textContent='دوباره';cr.textContent='تعداد کلیک: '+fa(cc)},5000)}else{cc++;cr.textContent=fa(cc)}};
+})();
+</script>
+</body>
+</html>
