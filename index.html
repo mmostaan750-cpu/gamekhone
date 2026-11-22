@@ -101,13 +101,53 @@ footer{margin-top:56px;padding:28px 0 36px;border-top:2px solid var(--line);colo
 #ce{color:var(--mute);text-align:center;padding:30px 0}
 .tot{display:flex;justify-content:space-between;font-weight:900;font-size:1.1rem}
 #cm{color:var(--pink);font-weight:600;min-height:1.6em;margin:0}
+.hero{background:linear-gradient(120deg,#2B3BFF,#5B3DFF,#2B3BFF);background-size:200% 200%;animation:bg 9s ease infinite}
+@keyframes bg{50%{background-position:100% 50%}}
+.logo b{display:inline-block;transition:transform .3s}.logo:hover b{transform:rotate(-8deg) scale(1.1)}
+nav a{position:relative}nav a::after{content:'';position:absolute;bottom:0;right:0;width:0;height:2px;background:var(--blue);transition:width .3s}nav a:hover::after{width:100%}
+.btn{transition:transform .15s,background .2s}.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.95)}
+.card{transition:transform .25s,border-color .25s,box-shadow .25s}.card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(43,59,255,.18)}
+ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.cal li:hover{transform:translateX(-8px);border-color:var(--blue)}
+.vid{animation:pulse 2.4s ease-in-out infinite}.card:hover .vid{animation-duration:.8s}
+@keyframes pulse{50%{transform:scale(1.03)}}
+.sd.on h3,.sd.on p,.sd.on .tag{animation:up .6s both}.sd.on p{animation-delay:.12s}
+.cell{transition:transform .15s,background .2s}.cell.on{animation:popt .25s}
+.mini{transition:transform .25s,box-shadow .25s}.mini:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(43,59,255,.18)}
+.rps{font-size:1.6rem}.rps:hover{transform:scale(1.2) rotate(-6deg)}
+.shake{animation:shk .4s}@keyframes shk{25%{transform:translateX(-6px) rotate(-8deg)}75%{transform:translateX(6px) rotate(8deg)}}
+.popt{animation:popt .4s}@keyframes popt{from{transform:scale(.6);opacity:0}}
+#rr,#cr{font-weight:600;min-height:1.8em}
+.btn.run{animation:rp .4s infinite}@keyframes rp{50%{transform:scale(1.1)}}
+.bump{animation:bump .4s}@keyframes bump{40%{transform:scale(1.18) rotate(-3deg)}}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.js .rv.in{opacity:1;transform:none}
+.rev.in .bar b{transform-origin:right;animation:grow 1.1s .3s both}@keyframes grow{from{transform:scaleX(0)}}
+.rev.in .big{animation:popt .7s .1s both}
+#pg{position:fixed;top:0;right:0;height:4px;width:0;background:var(--pink);z-index:60}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1!important;transform:none!important}}
+.tm{display:inline-block;width:44px;height:44px;line-height:44px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900;margin-inline-start:8px;vertical-align:middle;text-align:center}
+.tm.low{background:var(--pink);animation:rp .5s infinite}
+.cv{aspect-ratio:16/9;border-radius:12px;margin-bottom:12px;display:grid;place-items:center;font-size:2.8rem;font-weight:900;color:#fff;overflow:hidden;position:relative;transition:transform .3s}
+.cv::after{content:'';position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.12);top:-30px;right:-20px}
+.card:hover .cv{transform:scale(1.04)}
+.cv.t{font-size:1.7rem;letter-spacing:1px}
+#up{position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:48px;height:48px;border-radius:50%;border:0;background:var(--yellow);color:#17123A;font-size:1.4rem;font-weight:900;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.25);opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .3s,transform .3s;z-index:40}
+#up.show{opacity:1;transform:none;pointer-events:auto}#up.show:hover{transform:translateY(-4px)}
+.prod,#consoles .card{cursor:pointer}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;place-items:center;padding:20px;z-index:70}.mo.open{display:grid}
+.mb{background:var(--bg);color:var(--ink);border-radius:22px;max-width:480px;width:100%;max-height:90vh;overflow:auto;padding:20px;position:relative;animation:popt .3s}
+.mb .x{position:absolute;top:12px;left:12px;z-index:2;background:rgba(0,0,0,.35);color:#fff}
+.mb .cv{margin-bottom:14px}.mb h2{margin:0 0 4px}.mb p{margin:10px 0}.mb .good{color:var(--blue);font-weight:600}
+.card .btn+.btn{margin-inline-start:6px}
+.btn.alt{background:var(--blue);color:#fff}.btn.alt:hover{background:var(--pink)}
+.bar{grid-template-columns:90px 1fr 56px}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
   <a class="logo" href="#"><b>گیم</b>خونه</a>
-  <nav><a href="#news">اخبار</a><a href="#store">فروشگاه</a><a href="#videos">ویدیو</a><a href="#review">نقد</a><a href="#calendar">تقویم</a><a href="#play">بازی</a></nav>
+  <nav><a href="#news">اخبار</a><a href="#store">فروشگاه</a><a href="#consoles">کنسول‌ها</a><a href="#videos">ویدیو</a><a href="#review">نقد</a><a href="#calendar">تقویم</a><a href="#play">بازی</a></nav>
   <button class="btn" id="cart" type="button">سبد خرید: <span id="cc">۰</span></button>
 </header>
 
@@ -130,7 +170,7 @@ footer{margin-top:56px;padding:28px 0 36px;border-top:2px solid var(--line);colo
   <div class="dots" id="dots"></div>
   <div class="sn"><button type="button" id="prv" aria-label="قبلی">›</button><button type="button" id="nxt" aria-label="بعدی">‹</button></div>
   <div class="sd s1 on"><span class="tag">خبر ویژه</span><h3>آپدیت بزرگ فصل جدید منتشر شد</h3><p>نقشه‌ی تازه، سلاح‌های جدید و تغییرات تعادل بازی در یک نگاه.</p></div>
-  <div class="sd s2"><span class="tag">نقد</span><h3>افسانه‌ی سرزمین‌های گمشده با امتیاز ۹.۴</h3><p>جهانی زنده و مبارزه‌ای روان؛ نقد کامل رو بخونید.</p></div>
+  <div class="sd s2"><span class="tag">نقد</span><h3>نقد Grand Theft Auto VI: تحسین تقریباً همه‌ی منتقدان</h3><p>بازی ۲۸ آبان عرضه شد؛ IGN و GameSpot بهش نمره‌ی کامل دادن.</p></div>
   <div class="sd s3"><span class="tag">به‌زودی</span><h3>۱۰ بازی که این ماه منتشر می‌شن</h3><p>تقویم عرضه رو ببینید و بازی بعدیتون رو انتخاب کنید.</p></div>
 </div>
 
@@ -157,17 +197,43 @@ footer{margin-top:56px;padding:28px 0 36px;border-top:2px solid var(--line);colo
   <h2>فروشگاه بازی</h2>
   <input id="q" type="search" placeholder="جستجوی اسم بازی..." aria-label="جستجو">
   <div class="chips" id="chips">
-    <button class="chip act" data-p="all">همه</button><button class="chip" data-p="pc">کامپیوتر</button><button class="chip" data-p="ps">پلی‌استیشن</button><button class="chip" data-p="xbox">ایکس‌باکس</button><button class="chip" data-p="mobile">موبایل</button>
+    <button class="chip act" data-p="all">همه</button><button class="chip" data-p="pc">کامپیوتر</button><button class="chip" data-p="ps">پلی‌استیشن</button><button class="chip" data-p="xbox">ایکس‌باکس</button><button class="chip" data-p="mobile">موبایل</button><button class="chip" data-p="steam">استیم</button><button class="chip" data-p="epic">Epic Games</button><button class="chip" data-p="battlenet">Battle.net</button>
   </div>
   <div class="cards" id="prods">
-    <div class="card prod" data-p="pc ps xbox" data-n="افسانه‌ی سرزمین‌های گمشده"><h3>افسانه‌ی سرزمین‌های گمشده</h3><div class="pl">کامپیوتر، پلی‌استیشن، ایکس‌باکس</div><div class="price">۱,۲۰۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
-    <div class="card prod" data-p="pc ps xbox" data-n="نبرد ستاره‌ها"><h3>نبرد ستاره‌ها</h3><div class="pl">کامپیوتر، پلی‌استیشن، ایکس‌باکس</div><div class="price">۹۸۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
-    <div class="card prod" data-p="pc" data-n="معمای شب"><h3>معمای شب</h3><div class="pl">کامپیوتر</div><div class="price">۲۴۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
-    <div class="card prod" data-p="ps" data-n="سرعت بی‌پایان"><h3>سرعت بی‌پایان</h3><div class="pl">پلی‌استیشن</div><div class="price">۸۵۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
-    <div class="card prod" data-p="xbox pc" data-n="قلعه‌ی آتش"><h3>قلعه‌ی آتش</h3><div class="pl">ایکس‌باکس، کامپیوتر</div><div class="price">۷۲۰,۰۰۰ تومان</div><button class="btn add">افزودن به سبد</button></div>
-    <div class="card prod" data-p="mobile" data-n="جزیره‌ی کوچک"><h3>جزیره‌ی کوچک</h3><div class="pl">موبایل</div><div class="price">رایگان</div><button class="btn add">افزودن به سبد</button></div>
+    <div class="card prod" data-p="steam pc" data-n="Counter-Strike 2 کانتر"><h3>Counter-Strike 2</h3><div class="pl">استیم · شوتر تیمی</div><a class="btn" href="https://store.steampowered.com/search/?term=Counter-Strike%202" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Dota 2 دوتا"><h3>Dota 2</h3><div class="pl">استیم · موبا</div><a class="btn" href="https://store.steampowered.com/search/?term=Dota%202" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Baldur's Gate 3 بالدرز گیت"><h3>Baldur's Gate 3</h3><div class="pl">استیم · نقش‌آفرینی</div><a class="btn" href="https://store.steampowered.com/search/?term=Baldur%27s%20Gate%203" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Elden Ring الدن رینگ"><h3>Elden Ring</h3><div class="pl">استیم · اکشن نقش‌آفرینی</div><a class="btn" href="https://store.steampowered.com/search/?term=Elden%20Ring" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Cyberpunk 2077 سایبرپانک"><h3>Cyberpunk 2077</h3><div class="pl">استیم · جهان‌باز</div><a class="btn" href="https://store.steampowered.com/search/?term=Cyberpunk%202077" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="The Witcher 3 ویچر"><h3>The Witcher 3</h3><div class="pl">استیم · نقش‌آفرینی</div><a class="btn" href="https://store.steampowered.com/search/?term=The%20Witcher%203" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Red Dead Redemption 2 رد دد"><h3>Red Dead Redemption 2</h3><div class="pl">استیم · جهان‌باز</div><a class="btn" href="https://store.steampowered.com/search/?term=Red%20Dead%20Redemption%202" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Stardew Valley استاردیو"><h3>Stardew Valley</h3><div class="pl">استیم · مزرعه‌داری</div><a class="btn" href="https://store.steampowered.com/search/?term=Stardew%20Valley" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Hades هیدز"><h3>Hades</h3><div class="pl">استیم · راگ‌لایک</div><a class="btn" href="https://store.steampowered.com/search/?term=Hades" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Hollow Knight هالو نایت"><h3>Hollow Knight</h3><div class="pl">استیم · ماجرایی</div><a class="btn" href="https://store.steampowered.com/search/?term=Hollow%20Knight" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Terraria تراریا"><h3>Terraria</h3><div class="pl">استیم · ساخت و بقا</div><a class="btn" href="https://store.steampowered.com/search/?term=Terraria" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="steam pc" data-n="Portal 2 پورتال"><h3>Portal 2</h3><div class="pl">استیم · پازل</div><a class="btn" href="https://store.steampowered.com/search/?term=Portal%202" target="_blank" rel="noopener">مشاهده در استیم</a></div>
+    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-n="Fortnite فورتنایت"><h3>Fortnite</h3><div class="pl">Epic Games · شوتر بتل‌رویال</div><a class="btn" href="https://store.epicgames.com/browse?q=Fortnite" target="_blank" rel="noopener">مشاهده در Epic</a></div>
+    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-n="Rocket League راکت لیگ"><h3>Rocket League</h3><div class="pl">Epic Games · مسابقه‌ای ماشینی</div><a class="btn" href="https://store.epicgames.com/browse?q=Rocket%20League" target="_blank" rel="noopener">مشاهده در Epic</a></div>
+    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-n="Fall Guys فال گایز"><h3>Fall Guys</h3><div class="pl">Epic Games · پارتی و مسابقه‌ای</div><a class="btn" href="https://store.epicgames.com/browse?q=Fall%20Guys" target="_blank" rel="noopener">مشاهده در Epic</a></div>
+    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-n="Genshin Impact گنشین ایمپکت"><h3>Genshin Impact</h3><div class="pl">Epic Games · نقش‌آفرینی جهان‌باز</div><a class="btn" href="https://store.epicgames.com/browse?q=Genshin%20Impact" target="_blank" rel="noopener">مشاهده در Epic</a></div>
+    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-n="Diablo IV دیابلو"><h3>Diablo IV</h3><div class="pl">Battle.net · اکشن نقش‌آفرینی</div><a class="btn" href="https://diablo4.blizzard.com/" target="_blank" rel="noopener">سایت رسمی</a></div>
+    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-n="Overwatch اورواچ"><h3>Overwatch</h3><div class="pl">Battle.net · شوتر قهرمان‌محور</div><a class="btn" href="https://overwatch.blizzard.com/" target="_blank" rel="noopener">سایت رسمی</a></div>
+    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-n="World of Warcraft وارکرفت"><h3>World of Warcraft</h3><div class="pl">Battle.net · نقش‌آفرینی آنلاین</div><a class="btn" href="https://worldofwarcraft.blizzard.com/" target="_blank" rel="noopener">سایت رسمی</a></div>
+    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-n="Hearthstone هارت استون"><h3>Hearthstone</h3><div class="pl">Battle.net · کارتی</div><a class="btn" href="https://hearthstone.blizzard.com/" target="_blank" rel="noopener">سایت رسمی</a></div>
   </div>
   <p id="none">بازی‌ای با این مشخصات پیدا نشد.</p>
+</section>
+
+<section id="consoles">
+  <h2>انواع کنسول و پلتفرم</h2>
+  <div class="cards">
+    <div class="card"><div class="cv t" style="background:linear-gradient(135deg,#0070D1,#003791)">PS5</div><h3>پلی‌استیشن ۵</h3><p>ساخت سونی. بازی‌های اختصاصی قوی و دسته‌ی دی‌سنس با لرزش واقعی.</p></div>
+    <div class="card"><div class="cv t" style="background:linear-gradient(135deg,#107C10,#0B4F0B)">XBOX</div><h3>ایکس‌باکس سری اکس</h3><p>ساخت مایکروسافت. سرویس گیم‌پس و سازگاری خوب با کامپیوتر.</p></div>
+    <div class="card"><div class="cv t" style="background:linear-gradient(135deg,#E60012,#9E000D)">SWITCH</div><h3>نینتندو سوییچ</h3><p>هم خونگی هم قابل حمل. بازی‌های خانوادگی و خلاقانه.</p></div>
+    <div class="card"><div class="cv t" style="background:linear-gradient(135deg,#2A475E,#1B2838)">DECK</div><h3>استیم دک</h3><p>کامپیوتر کفدستی از والو، کتابخانه‌ی استیمت رو همه‌جا با توئه.</p></div>
+    <div class="card"><div class="cv t" style="background:linear-gradient(135deg,#7B2CFF,#3B1B99)">PC</div><h3>کامپیوتر گیمینگ</h3><p>بیشترین انتخاب بازی، گرافیک قابل ارتقا و مود و ماوس و کیبورد.</p></div>
+    <div class="card"><div class="cv" style="background:linear-gradient(135deg,#FF8A3D,#E0245E)">📱</div><h3>گوشی و تبلت</h3><p>همیشه همراهته. بازی‌های رایگان و سبک برای هر زمان و مکان.</p></div>
+  </div>
 </section>
 
 <section id="videos">
@@ -180,34 +246,40 @@ footer{margin-top:56px;padding:28px 0 36px;border-top:2px solid var(--line);colo
 </section>
 
 <section id="review">
-  <h2>نقد کامل: افسانه‌ی سرزمین‌های گمشده</h2>
+  <h2>نقد و بررسی: Grand Theft Auto VI</h2>
   <div class="rev">
-    <div class="big">۹.۴</div>
+    <div class="big">۱۰</div>
     <div>
-      <div class="bar"><span>گیم‌پلی</span><i><b style="width:96%"></b></i><span>۹.۶</span></div>
-      <div class="bar"><span>گرافیک</span><i><b style="width:93%"></b></i><span>۹.۳</span></div>
-      <div class="bar"><span>داستان</span><i><b style="width:90%"></b></i><span>۹.۰</span></div>
-      <div class="bar"><span>موسیقی</span><i><b style="width:95%"></b></i><span>۹.۵</span></div>
-      <p><b>نقاط قوت:</b> دنیای زنده، مبارزه‌ی روان، موسیقی عالی.<br><b>نقاط ضعف:</b> زمان لودینگ و چند ماموریت تکراری.</p>
+      <p><b>سازنده:</b> Rockstar Games<br><b>عرضه:</b> ۲۸ آبان ۱۴۰۵ (۱۹ نوامبر ۲۰۲۶)<br><b>پلتفرم:</b> پلی‌استیشن ۵ و ایکس‌باکس سری ایکس/اس (طبق اطلاعات منتشرشده، فعلاً روی کامپیوتر و استیم نیست)</p>
+      <div class="bar"><span>IGN</span><i><b style="width:100%"></b></i><span>۱۰/۱۰</span></div>
+      <div class="bar"><span>GameSpot</span><i><b style="width:100%"></b></i><span>۱۰/۱۰</span></div>
+      <div class="bar"><span>Eurogamer</span><i><b style="width:100%"></b></i><span>۵/۵</span></div>
+      <div class="bar"><span>TechRadar</span><i><b style="width:100%"></b></i><span>۵/۵</span></div>
+      <p>بعد از ۱۳ سال انتظار، بیش از ۱۵۰ منتقد نقدشون رو منتشر کردن و تحسین‌ها تقریباً یکدست بوده. داستان تو ایالت خیالی لئونیدا (نسخه‌ی خیالی فلوریدا) و ماجرای عاشقانه‌ی جیسون و لوسیا که می‌خوان از زندگی تبهکاری فرار کنن می‌گذره.</p>
+      <p><b>چیزایی که منتقدان تحسین کردن:</b> جزئیات و وسعت دنیای بازی، داستان با چند پایان، تکراری نبودن ماموریت‌ها و تعقیب و گریزهای پلیسی.</p>
+      <p class="pl">نمره‌ها مال منتقدان همون سایت‌هاست (منبع: OpenCritic، CNN و TechRadar) و نظر شخصی ما نیست.</p>
     </div>
   </div>
 </section>
 
 <section id="calendar">
-  <h2>تقویم عرضه‌ی بازی‌های جدید</h2>
+  <h2>تقویم عرضه‌ی بازی‌های استیم</h2>
   <ul class="cal">
-    <li><span class="d">۱۵ آذر</span><span>نبرد ستاره‌ها: فصل دوم</span><span class="pl" style="margin-inline-start:auto">کامپیوتر، کنسول</span></li>
-    <li><span class="d">۲۸ آذر</span><span>جزیره‌ی کوچک ۲</span><span class="pl" style="margin-inline-start:auto">موبایل</span></li>
-    <li><span class="d">۱۰ دی</span><span>سرعت بی‌پایان: نسخه‌ی تکمیلی</span><span class="pl" style="margin-inline-start:auto">پلی‌استیشن</span></li>
-    <li><span class="d">۲۵ دی</span><span>قلعه‌ی آتش: بسته‌ی الحاقی</span><span class="pl" style="margin-inline-start:auto">ایکس‌باکس، کامپیوتر</span></li>
+    <li><span class="d">۱۰ آذر</span><span>Hela: Of Mice &amp; Magic</span><span class="pl" style="margin-inline-start:auto">ماجراجویی</span></li>
+    <li><span class="d">۱۲ آذر</span><span>Warhammer 40,000: Dawn of War IV</span><span class="pl" style="margin-inline-start:auto">استراتژی</span></li>
+    <li><span class="d">۱۲ آذر</span><span>Dragon Quest Monsters: The Withered World</span><span class="pl" style="margin-inline-start:auto">نقش‌آفرینی</span></li>
+    <li><span class="d">۱۲ آذر</span><span>Rayman Legends Retold</span><span class="pl" style="margin-inline-start:auto">پلتفرمر</span></li>
+    <li><span class="d">۱۹ آذر</span><span>Attack on Titan 3</span><span class="pl" style="margin-inline-start:auto">اکشن</span></li>
+    <li><span class="d">۲۰ آذر</span><span>Path of Exile 2 (نسخه‌ی ۱.۰)</span><span class="pl" style="margin-inline-start:auto">اکشن نقش‌آفرینی</span></li>
   </ul>
+  <p class="pl">تاریخ‌ها از لیست‌های PC Gamer و GameSpot گرفته شده و ممکنه عوض بشه.</p>
 </section>
 
 <section id="play">
   <h2>بازی کن</h2>
   <div class="cards">
     <div class="mini"><h3>سنگ، کاغذ، قیچی</h3><div><button class="btn rps" data-m="0">✊</button><button class="btn rps" data-m="1">✋</button><button class="btn rps" data-m="2">✌️</button></div><p id="rr">انتخاب کن!</p></div>
-    <div class="mini"><h3>کلیک‌سنج ۵ ثانیه‌ای</h3><button class="btn" id="ck">شروع</button><p id="cr">چند بار می‌تونی کلیک کنی؟</p></div>
+    <div class="mini"><h3>کلیک‌سنج ۵ ثانیه‌ای</h3><button class="btn" id="ck">شروع</button><span class="tm" id="tm" aria-live="off">۵</span><p id="cr">چند بار می‌تونی کلیک کنی؟</p></div>
   </div>
 </section>
 </main>
@@ -221,7 +293,7 @@ footer{margin-top:56px;padding:28px 0 36px;border-top:2px solid var(--line);colo
   <p id="cm"></p>
   <button class="btn" id="co" type="button">پرداخت</button>
 </aside>
-<footer id="contact"><span>© گیم‌خونه</span><span>ارتباط با ما: gamekhane3@gmail.com</span></footer>
+<footer id="contact"><span>© گیم‌خونه</span><span>ارتباط با ما: hello@gamekhane.example</span></footer>
 </div>
 
 <script>
@@ -245,7 +317,7 @@ footer{margin-top:56px;padding:28px 0 36px;border-top:2px solid var(--line);colo
 (function(){
   function fa(n){return String(n).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]})}
   var pf='all',q=document.getElementById('q'),ps=document.querySelectorAll('.prod'),cn=0;
-  function ap(){var t=q.value.trim(),n=0;ps.forEach(function(p){var ok=(pf==='all'||p.dataset.p.split(' ').indexOf(pf)>-1)&&p.dataset.n.indexOf(t)>-1;p.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
+  function ap(){var t=q.value.trim().toLowerCase(),n=0;ps.forEach(function(p){var ok=(pf==='all'||p.dataset.p.split(' ').indexOf(pf)>-1)&&p.dataset.n.toLowerCase().indexOf(t)>-1;p.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
   q.oninput=ap;
   document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('act')});c.classList.add('act');pf=c.dataset.p;ap()}});
   document.querySelectorAll('.add').forEach(function(b){b.onclick=function(){var c=b.closest('.prod');window.addCart(c.querySelector('h3').textContent,c.querySelector('.price').textContent);b.textContent='اضافه شد ✓';setTimeout(function(){b.textContent='افزودن به سبد'},1000)}});
@@ -274,13 +346,13 @@ footer{margin-top:56px;padding:28px 0 36px;border-top:2px solid var(--line);colo
   function render(){
     var ks=Object.keys(cart),q=0,t=0,h='';
     ks.forEach(function(k){var it=cart[k];q+=it.q;t+=it.p*it.q;
-      h+='<div class="ci"><b>'+k+'</b><div class="r"><button type="button" data-k="'+k+'" data-a="-" aria-label="کم">−</button><span>'+fa(it.q)+'</span><button type="button" data-k="'+k+'" data-a="+" aria-label="زیاد">+</button><button type="button" data-k="'+k+'" data-a="x" aria-label="حذف">🗑</button><span class="p">'+money(it.p*it.q)+'</span></div></div>'});
+      h+='<div class="ci"><b>'+k+'</b><div class="r"><button type="button" data-k="'+k+'" data-a="-" aria-label="کم">−</button><span>'+fa(it.q)+'</span><button type="button" data-k="'+k+'" data-a="+" aria-label="زیاد">+</button><button type="button" data-k="'+k+'" data-a="x" aria-label="حذف">🗑</button><span class="p">'+(it.u?it.t:money(it.p*it.q))+'</span></div></div>'});
     cl.innerHTML=h;
     document.getElementById('ce').style.display=ks.length?'none':'block';
     document.getElementById('cc').textContent=fa(q);
-    document.getElementById('ct').textContent=money(t);
+    var hu=ks.some(function(k){return cart[k].u});document.getElementById('ct').textContent=(t||!hu?money(t):'')+(hu?(t?' + ':'')+'قیمت‌ها در فروشگاه اصلی':'');
   }
-  window.addCart=function(n,p){if(!cart[n])cart[n]={p:num(p),q:0};cart[n].q++;render()};
+  window.addCart=function(n,p){if(!cart[n])cart[n]={p:num(p),q:0,u:p.indexOf('قیمت در')===0,t:p};cart[n].q++;render()};
   cl.onclick=function(e){var b=e.target.closest('button');if(!b)return;var k=b.dataset.k,a=b.dataset.a;
     if(a==='+')cart[k].q++;else if(a==='-'){cart[k].q--;if(cart[k].q<1)delete cart[k]}else delete cart[k];render()};
   function open(){dr.classList.add('open');ov.classList.add('open');dr.setAttribute('aria-hidden','false');document.getElementById('cm').textContent=''}
@@ -290,6 +362,118 @@ footer{margin-top:56px;padding:28px 0 36px;border-top:2px solid var(--line);colo
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
   document.getElementById('co').onclick=function(){document.getElementById('cm').textContent=Object.keys(cart).length?'پرداخت آنلاین هنوز به سایت وصل نشده (نسخه‌ی نمایشی).':'اول یه بازی به سبد اضافه کن.'};
   render();
+})();
+(function(){
+  var de=document.documentElement,pg=document.createElement('div');pg.id='pg';document.body.appendChild(pg);
+  function sc(){var h=de.scrollHeight-innerHeight;pg.style.width=(h>0?scrollY/h*100:0)+'%'}
+  addEventListener('scroll',sc,{passive:true});sc();
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if('IntersectionObserver' in window&&!rm){
+    de.classList.add('js');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.add('in');io.unobserve(el);setTimeout(function(){el.classList.remove('rv','in');el.style.transitionDelay=''},1100)}})},{threshold:.12});
+    document.querySelectorAll('section>h2,.cards>*,ol.top li,.cal li,.rev,.mini').forEach(function(el){var i=Array.prototype.indexOf.call(el.parentNode.children,el);el.style.transitionDelay=Math.min(i,5)*80+'ms';el.classList.add('rv');io.observe(el)});
+  }
+  var oa=window.addCart;
+  if(oa)window.addCart=function(){oa.apply(null,arguments);var c=document.getElementById('cart');c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump')};
+  function re(el,cls){el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls)}
+  document.querySelectorAll('.rps').forEach(function(b){b.addEventListener('click',function(){re(b,'shake');re(document.getElementById('rr'),'popt')})});
+  var ck=document.getElementById('ck');
+  ck.addEventListener('click',function(){
+    if(ck.textContent==='کلیک کن!'){re(document.getElementById('cr'),'popt');if(!ck.classList.contains('run')){ck.classList.add('run');var tm=document.getElementById('tm'),end=Date.now()+5000;tm.textContent='۵';tm.classList.remove('low');var iv=setInterval(function(){var r=Math.max(0,Math.ceil((end-Date.now())/1000));tm.textContent='۰۱۲۳۴۵'[r];tm.classList.toggle('low',r<=2);if(r<=0){clearInterval(iv);ck.classList.remove('run');tm.classList.remove('low')}},100)}}
+  });
+})();
+(function(){
+  var E=[['شوتر','🔫'],['موبا','⚔️'],['جهان','🌍'],['نقش','🧙'],['مزرعه','🌾'],['راگ','🔥'],['ماجرا','🗝️'],['ساخت','⛏️'],['پازل','🧩'],['مسابقه','🏎️'],['موبایل','📱'],['اکشن','💥']];
+  document.querySelectorAll('.prod').forEach(function(c){
+    var l=c.querySelector('.pl').textContent,g='🎮',h=0,n=c.dataset.n;
+    for(var i=0;i<E.length;i++){if(l.indexOf(E[i][0])>-1){g=E[i][1];break}}
+    for(var j=0;j<n.length;j++)h=(h*31+n.charCodeAt(j))%360;
+    var d=document.createElement('div');d.className='cv';d.textContent=g;
+    d.style.background='linear-gradient(135deg,hsl('+h+',75%,48%),hsl('+((h+50)%360)+',75%,34%))';
+    c.insertBefore(d,c.firstChild);
+  });
+})();
+(function(){
+  var u=document.createElement('button');u.id='up';u.type='button';u.textContent='↑';u.setAttribute('aria-label','برگشت به بالای صفحه');document.body.appendChild(u);
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function t(){u.classList.toggle('show',scrollY>400)}
+  addEventListener('scroll',t,{passive:true});t();
+  u.onclick=function(){scrollTo({top:0,behavior:rm?'auto':'smooth'})};
+})();
+(function(){
+  var D=[
+  ['Fortnite','بتل‌رویال رایگان از اپیک‌گیمز: تعداد زیادی بازیکن روی یه جزیره می‌جنگن و آخرین نفر زنده برنده‌ست. امکان ساختن سازه وسط جنگ و حالت‌های خلاقانه هم داره.','کسایی که بازی آنلاین سریع و رایگان می‌خوان'],
+  ['Rocket League','فوتبال با ماشین‌های موشکی: دو تیم با ماشین توپ رو تو دروازه می‌ندازن. یاد گرفتنش ساده‌ست ولی مهارت‌های حرفه‌ای زیادی داره و رایگانه.','علاقه‌مندان به بازی تیمی سریع'],
+  ['Fall Guys','بازی پارتی با مرحله‌های مسابقه‌ای بامزه: چندین بازیکن تو مانع‌ها مسابقه می‌دن تا فقط یه نفر تاج رو ببره. رایگانه و با دوستان خیلی باحاله.','کسایی که بازی شاد و بدون استرس می‌خوان'],
+  ['Genshin','نقش‌آفرینی جهان‌باز رایگان از میهویو با دنیای انیمه‌ای، تیم چندنفره‌ی قهرمان‌ها و المان‌های جادویی. روی کامپیوتر، موبایل و کنسول بازی می‌شه.','طرفداران جهان‌باز و فضای انیمه‌ای'],
+  ['Diablo','اکشن نقش‌آفرینی تاریک از بلیزارد: کلاس‌های مختلف، غارها و غنیمت‌های زیاد و حالت آنلاین مشترک. سبک بازی جمع‌آوری تجهیز و تقویت شخصیته.','طرفداران هک‌اند‌اسلش و جمع‌آوری آیتم'],
+  ['Overwatch','شوتر تیمی قهرمان‌محور از بلیزارد با کاراکترهای متنوع و نقش‌های تانک، دمیج و ساپورت. تمرکز روی کار تیمی و هماهنگی توانایی‌هاست.','کسایی که شوتر تیمی رنگارنگ دوست دارن'],
+  ['Warcraft','یکی از مشهورترین بازی‌های آنلاین نقش‌آفرینی با دنیای وسیع آزروت، گروه‌های مبارزه و گیلد. معمولاً برای بازی کامل نیاز به اشتراک یا خرید داره.','طرفداران جهان‌های آنلاین طولانی'],
+  ['Hearthstone','بازی کارتی بلیزارد تو دنیای وارکرفت: دک می‌سازی و نوبتی با حریف می‌جنگی. هر دست کوتاهه و روی موبایل هم هست.','کسایی که کارت‌بازی و استراتژی دوست دارن'],
+  ['سرزمین','بازی نمونه‌ی سایت: ماجراجویی فانتزی با جهان باز، قهرمان‌های قابل ارتقا و ماموریت‌های داستانی.','طرفداران فانتزی'],
+  ['ستاره','بازی نمونه‌ی سایت: نبرد فضایی با ناوهای قابل ارتقا و مبارزه‌ی تیمی.','علاقه‌مندان علمی‌تخیلی'],
+  ['معما','بازی نمونه‌ی سایت: پازل و معمای کارآگاهی با سرنخ‌های پنهان.','دوستداران معما'],
+  ['سرعت','بازی نمونه‌ی سایت: مسابقه‌ی ماشین‌سواری آرکید با پیست‌های متنوع.','طرفداران سرعت'],
+  ['قلعه','بازی نمونه‌ی سایت: اکشن و دفاع از قلعه در برابر لشکرکشی.','کسایی که اکشن می‌خوان'],
+  ['جزیره','بازی نمونه‌ی رایگان موبایل: ساخت و مدیریت یه جزیره‌ی آروم.','بازی سبک و رایگان'],
+  ['Counter','شوتر تیمیِ رقابتی: دو تیم، بمب‌گذاری و خنثی‌سازی، با تمرکز روی دقت و هماهنگی. از پرطرفدارترین بازی‌های رقابتی دنیاست.','علاقه‌مندان رقابت تیمی و ای‌اسپورت'],
+  ['Dota','بازی موبای تیمیِ ۵ به ۵ که هدف نابود کردن پایگاه حریفه. قهرمان‌های زیاد و استراتژی عمیق داره و یاد گرفتنش زمان می‌بره.','کسایی که استراتژی و کار تیمی دوست دارن'],
+  ['Baldur','نقش‌آفرینی نوبتی بر پایه‌ی دانجنز اند دراگونز با داستان انتخاب‌محور و همراهان به‌یادموندنی. هم تک‌نفره می‌شه بازی کرد هم همکاری.','عاشقان داستان و انتخاب‌های سخت'],
+  ['Elden','اکشن نقش‌آفرینی جهان‌باز از فرام‌سافتور، با دنیایی که کشفش به عهده‌ی خودته. معروفه به چالش سخت و باس‌فایت‌های سنگین.','کسایی که چالش و کاوش دوست دارن'],
+  ['Cyberpunk','نقش‌آفرینی جهان‌باز تو شهری آینده‌نگرانه به اسم نایت‌سیتی، با داستان قوی و انتخاب سبک بازی.','طرفداران فضای علمی‌تخیلی و داستان'],
+  ['Witcher','ماجرای شکارچی هیولا، ژرالت، تو دنیایی جهان‌باز. ماموریت‌های فرعی داستانی و پرجزئیاتش شهرت زیادی داره.','عاشقان فانتزی و داستان‌گویی'],
+  ['Red Dead','ماجراجویی جهان‌باز تو غرب وحشی، درباره‌ی یه گروه یاغی. با ریتم آروم، جزئیات زیاد و داستان احساسی.','کسایی که حوصله‌ی داستان و دنیای زنده دارن'],
+  ['Stardew','بازی مزرعه‌داری آروم: کشت، ماهی‌گیری، معدن‌کاوی و ارتباط با اهالی دهکده. برای استراحت و بازی طولانی عالیه.','کسایی که بازی آروم و دلنشین می‌خوان'],
+  ['Hades','اکشن راگ‌لایک: سعی می‌کنی از دنیای مردگان فرار کنی و هر بار شکست داستان رو جلو می‌بره. مبارزه‌ی سریع و روون.','کسایی که اکشن سریع دوست دارن'],
+  ['Hollow','ماجراجویی دوبعدی تو یه پادشاهی زیرزمینی پر از حشره. کاوش، مبارزه‌ی سخت و فضای تاریک و قشنگ.','کسایی که کاوش و چالش دوست دارن'],
+  ['Terraria','ماجراجویی دوبعدی ساخت و بقا: کندن زمین، ساختن خونه، ساخت سلاح و مبارزه با باس‌ها. با دوستان هم می‌شه بازی کرد.','طرفداران ساخت‌وساز و کاوش'],
+  ['Portal','بازی پازل اول‌شخص با تفنگ پرتال که دو دریچه می‌سازه. شوخ‌طبعی و طراحی هوشمندانه‌ی مرحله‌ها معروفه و حالت دونفره هم داره.','کسایی که پازل و فکر کردن دوست دارن'],
+  ['استیشن','کنسول نسل نهم سونی با دسته‌ی دوال‌سنس (لرزش لمسی و ماشه‌ی تطبیقی) و حافظه‌ی SSD سریع. بازی‌های اختصاصی سونی روی همین کنسول قابل بازیه.','کسایی که بازی‌های سینمایی تک‌نفره دوست دارن'],
+  ['ایکس','کنسول مایکروسافت در دو مدل: سری اکس (قوی‌تر) و سری اس (ارزون‌تر و کوچیک‌تر). با گیم‌پس می‌شه کلی بازی رو با اشتراک بازی کرد.','کسایی که اشتراک بازی و سازگاری با ویندوز می‌خوان'],
+  ['سوییچ','کنسول هیبریدی نینتندو که هم به تلویزیون وصل می‌شه هم دستی بازی می‌کنی. بازی‌های اختصاصی مثل زلدا و ماریو روش هست.','خانواده‌ها و کسایی که بازی قابل حمل می‌خوان'],
+  ['دک','کنسول دستی والو که کتابخونه‌ی استیم رو اجرا می‌کنه و مثل یه کامپیوتر کوچیک می‌شه ازش استفاده کرد.','کسایی که بازی‌های کامپیوتر رو جایی غیر از میز می‌خوان'],
+  ['گیمینگ','انعطاف‌پذیرترین پلتفرم: قطعاتش رو ارتقا می‌دی، از موس و کیبورد استفاده می‌کنی و به همه‌ی فروشگاه‌ها و مودها دسترسی داری. هزینه‌ی اولیه معمولاً بیشتره.','کسایی که کنترل کامل و بالاترین کیفیت می‌خوان'],
+  ['گوشی','بازی‌های موبایلی از رایگان تا پولی، با کنترل لمسی. بدون نیاز به دستگاه جدا، فقط نصب کن و بازی کن.','بازی سریع و ساده تو هر زمان']
+  ];
+  var mo=document.createElement('div');mo.className='mo';mo.setAttribute('role','dialog');mo.setAttribute('aria-modal','true');
+  mo.innerHTML='<div class="mb"><button class="x" type="button" aria-label="بستن">✕</button><div id="mc"></div></div>';
+  document.body.appendChild(mo);
+  var mc=mo.querySelector('#mc');
+  function close(){mo.classList.remove('open')}
+  mo.onclick=function(e){if(e.target===mo||e.target.closest('.x'))close()};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  function el(tag,cls,txt){var x=document.createElement(tag);if(cls)x.className=cls;if(txt)x.textContent=txt;mc.appendChild(x);return x}
+  document.addEventListener('click',function(e){
+    var c=e.target.closest('.prod,#consoles .card');
+    if(!c||e.target.closest('a,button'))return;
+    var h=c.querySelector('h3').textContent,d=null,i;
+    for(i=0;i<D.length;i++){if(h.indexOf(D[i][0])>-1){d=D[i];break}}
+    mc.innerHTML='';
+    var cv=c.querySelector('.cv');if(cv)mc.appendChild(cv.cloneNode(true));
+    el('h2','',h);
+    var pl=c.querySelector('.pl');if(pl)el('div','pl',pl.textContent);
+    var pp=c.querySelector('p');
+    el('p','',d?d[1]:(pp?pp.textContent:''));
+    if(d)el('p','good','مناسب برای: '+d[2]);
+    var a=c.querySelector('a.btn');if(a)mc.appendChild(a.cloneNode(true));
+    var ad=c.querySelector('.add'),pr=c.querySelector('.price');
+    if(ad){if(pr)el('div','price',pr.textContent);var b=el('button','btn','افزودن به سبد');b.type='button';b.onclick=function(){window.addCart(h,pr?pr.textContent:'');b.textContent='اضافه شد ✓'}}
+    mo.classList.add('open');
+  });
+})();
+(function(){
+  document.querySelectorAll('.prod').forEach(function(c){
+    var a=c.querySelector('a.btn');if(!a)return;
+    var h=c.querySelector('h3').textContent;
+    var p=document.createElement('div');p.className='price';p.textContent='قیمت در '+(c.dataset.s||'استیم');c.insertBefore(p,a);
+    var b=document.createElement('button');b.type='button';b.className='btn add alt';b.textContent='افزودن به سبد';
+    b.onclick=function(){window.addCart(h,'قیمت در '+(c.dataset.s||'استیم'));b.textContent='اضافه شد ✓';setTimeout(function(){b.textContent='افزودن به سبد'},1000)};
+    a.after(b);
+  });
+  var V=['Elden Ring','Cyberpunk 2077','Baldur\'s Gate 3','Red Dead Redemption 2','The Witcher 3','Hades'],h='';
+  V.forEach(function(n,i){var c=i*55+230;
+    h+='<a class="card" href="https://www.youtube.com/results?search_query='+encodeURIComponent(n+' official trailer')+'" target="_blank" rel="noopener"><div class="vid" style="background:linear-gradient(135deg,hsl('+c%360+',75%,48%),hsl('+(c+50)%360+',75%,34%))">▶</div><h3>تریلر رسمی '+n+'</h3><p>مشاهده در یوتیوب</p></a>'});
+  document.querySelector('#videos .cards').innerHTML=h;
 })();
 </script>
 </body>
