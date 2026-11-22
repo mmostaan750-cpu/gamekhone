@@ -141,6 +141,7 @@ ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.c
 .card .btn+.btn{margin-inline-start:6px}
 .btn.alt{background:var(--blue);color:#fff}.btn.alt:hover{background:var(--pink)}
 .bar{grid-template-columns:90px 1fr 56px}
+.tm2{display:block;color:var(--mute);font-weight:600;font-size:.8rem;margin-top:2px}
 </style>
 </head>
 <body>
@@ -196,30 +197,31 @@ ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.c
 <section id="store">
   <h2>فروشگاه بازی</h2>
   <input id="q" type="search" placeholder="جستجوی اسم بازی..." aria-label="جستجو">
+  <p class="pl">قیمت‌ها به دلار (قیمت پایه‌ی رسمی) و تومان نوشته شدن. نرخ تبدیل: هر دلار ۲۶۸,۰۰۰ تومان (دلار آزاد، ۱ آذر ۱۴۰۵) و با نوسان بازار عوض می‌شه. با تخفیف یا منطقه‌ی شما ممکنه قیمت فرق کنه.</p>
   <div class="chips" id="chips">
     <button class="chip act" data-p="all">همه</button><button class="chip" data-p="pc">کامپیوتر</button><button class="chip" data-p="ps">پلی‌استیشن</button><button class="chip" data-p="xbox">ایکس‌باکس</button><button class="chip" data-p="mobile">موبایل</button><button class="chip" data-p="steam">استیم</button><button class="chip" data-p="epic">Epic Games</button><button class="chip" data-p="battlenet">Battle.net</button>
   </div>
   <div class="cards" id="prods">
-    <div class="card prod" data-p="steam pc" data-n="Counter-Strike 2 کانتر"><h3>Counter-Strike 2</h3><div class="pl">استیم · شوتر تیمی</div><a class="btn" href="https://store.steampowered.com/search/?term=Counter-Strike%202" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Dota 2 دوتا"><h3>Dota 2</h3><div class="pl">استیم · موبا</div><a class="btn" href="https://store.steampowered.com/search/?term=Dota%202" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Baldur's Gate 3 بالدرز گیت"><h3>Baldur's Gate 3</h3><div class="pl">استیم · نقش‌آفرینی</div><a class="btn" href="https://store.steampowered.com/search/?term=Baldur%27s%20Gate%203" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Elden Ring الدن رینگ"><h3>Elden Ring</h3><div class="pl">استیم · اکشن نقش‌آفرینی</div><a class="btn" href="https://store.steampowered.com/search/?term=Elden%20Ring" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Cyberpunk 2077 سایبرپانک"><h3>Cyberpunk 2077</h3><div class="pl">استیم · جهان‌باز</div><a class="btn" href="https://store.steampowered.com/search/?term=Cyberpunk%202077" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="The Witcher 3 ویچر"><h3>The Witcher 3</h3><div class="pl">استیم · نقش‌آفرینی</div><a class="btn" href="https://store.steampowered.com/search/?term=The%20Witcher%203" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Red Dead Redemption 2 رد دد"><h3>Red Dead Redemption 2</h3><div class="pl">استیم · جهان‌باز</div><a class="btn" href="https://store.steampowered.com/search/?term=Red%20Dead%20Redemption%202" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Stardew Valley استاردیو"><h3>Stardew Valley</h3><div class="pl">استیم · مزرعه‌داری</div><a class="btn" href="https://store.steampowered.com/search/?term=Stardew%20Valley" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Hades هیدز"><h3>Hades</h3><div class="pl">استیم · راگ‌لایک</div><a class="btn" href="https://store.steampowered.com/search/?term=Hades" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Hollow Knight هالو نایت"><h3>Hollow Knight</h3><div class="pl">استیم · ماجرایی</div><a class="btn" href="https://store.steampowered.com/search/?term=Hollow%20Knight" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Terraria تراریا"><h3>Terraria</h3><div class="pl">استیم · ساخت و بقا</div><a class="btn" href="https://store.steampowered.com/search/?term=Terraria" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="steam pc" data-n="Portal 2 پورتال"><h3>Portal 2</h3><div class="pl">استیم · پازل</div><a class="btn" href="https://store.steampowered.com/search/?term=Portal%202" target="_blank" rel="noopener">مشاهده در استیم</a></div>
-    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-n="Fortnite فورتنایت"><h3>Fortnite</h3><div class="pl">Epic Games · شوتر بتل‌رویال</div><a class="btn" href="https://store.epicgames.com/browse?q=Fortnite" target="_blank" rel="noopener">مشاهده در Epic</a></div>
-    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-n="Rocket League راکت لیگ"><h3>Rocket League</h3><div class="pl">Epic Games · مسابقه‌ای ماشینی</div><a class="btn" href="https://store.epicgames.com/browse?q=Rocket%20League" target="_blank" rel="noopener">مشاهده در Epic</a></div>
-    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-n="Fall Guys فال گایز"><h3>Fall Guys</h3><div class="pl">Epic Games · پارتی و مسابقه‌ای</div><a class="btn" href="https://store.epicgames.com/browse?q=Fall%20Guys" target="_blank" rel="noopener">مشاهده در Epic</a></div>
-    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-n="Genshin Impact گنشین ایمپکت"><h3>Genshin Impact</h3><div class="pl">Epic Games · نقش‌آفرینی جهان‌باز</div><a class="btn" href="https://store.epicgames.com/browse?q=Genshin%20Impact" target="_blank" rel="noopener">مشاهده در Epic</a></div>
-    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-n="Diablo IV دیابلو"><h3>Diablo IV</h3><div class="pl">Battle.net · اکشن نقش‌آفرینی</div><a class="btn" href="https://diablo4.blizzard.com/" target="_blank" rel="noopener">سایت رسمی</a></div>
-    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-n="Overwatch اورواچ"><h3>Overwatch</h3><div class="pl">Battle.net · شوتر قهرمان‌محور</div><a class="btn" href="https://overwatch.blizzard.com/" target="_blank" rel="noopener">سایت رسمی</a></div>
-    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-n="World of Warcraft وارکرفت"><h3>World of Warcraft</h3><div class="pl">Battle.net · نقش‌آفرینی آنلاین</div><a class="btn" href="https://worldofwarcraft.blizzard.com/" target="_blank" rel="noopener">سایت رسمی</a></div>
-    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-n="Hearthstone هارت استون"><h3>Hearthstone</h3><div class="pl">Battle.net · کارتی</div><a class="btn" href="https://hearthstone.blizzard.com/" target="_blank" rel="noopener">سایت رسمی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="0" data-price="رایگان" data-n="Counter-Strike 2 کانتر"><h3>Counter-Strike 2</h3><div class="pl">استیم · شوتر تیمی</div><a class="lnk" href="https://store.steampowered.com/search/?term=Counter-Strike%202" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="0" data-price="رایگان" data-n="Dota 2 دوتا"><h3>Dota 2</h3><div class="pl">استیم · موبا</div><a class="lnk" href="https://store.steampowered.com/search/?term=Dota%202" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="59.99" data-price="$۵۹٫۹۹" data-n="Baldur's Gate 3 بالدرز گیت"><h3>Baldur's Gate 3</h3><div class="pl">استیم · نقش‌آفرینی</div><a class="lnk" href="https://store.steampowered.com/search/?term=Baldur%27s%20Gate%203" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="59.99" data-price="$۵۹٫۹۹" data-n="Elden Ring الدن رینگ"><h3>Elden Ring</h3><div class="pl">استیم · اکشن نقش‌آفرینی</div><a class="lnk" href="https://store.steampowered.com/search/?term=Elden%20Ring" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="59.99" data-price="$۵۹٫۹۹" data-n="Cyberpunk 2077 سایبرپانک"><h3>Cyberpunk 2077</h3><div class="pl">استیم · جهان‌باز</div><a class="lnk" href="https://store.steampowered.com/search/?term=Cyberpunk%202077" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="39.99" data-price="$۳۹٫۹۹" data-n="The Witcher 3 ویچر"><h3>The Witcher 3</h3><div class="pl">استیم · نقش‌آفرینی</div><a class="lnk" href="https://store.steampowered.com/search/?term=The%20Witcher%203" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="59.99" data-price="$۵۹٫۹۹" data-n="Red Dead Redemption 2 رد دد"><h3>Red Dead Redemption 2</h3><div class="pl">استیم · جهان‌باز</div><a class="lnk" href="https://store.steampowered.com/search/?term=Red%20Dead%20Redemption%202" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="14.99" data-price="$۱۴٫۹۹" data-n="Stardew Valley استاردیو"><h3>Stardew Valley</h3><div class="pl">استیم · مزرعه‌داری</div><a class="lnk" href="https://store.steampowered.com/search/?term=Stardew%20Valley" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="24.99" data-price="$۲۴٫۹۹" data-n="Hades هیدز"><h3>Hades</h3><div class="pl">استیم · راگ‌لایک</div><a class="lnk" href="https://store.steampowered.com/search/?term=Hades" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="14.99" data-price="$۱۴٫۹۹" data-n="Hollow Knight هالو نایت"><h3>Hollow Knight</h3><div class="pl">استیم · ماجرایی</div><a class="lnk" href="https://store.steampowered.com/search/?term=Hollow%20Knight" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="9.99" data-price="$۹٫۹۹" data-n="Terraria تراریا"><h3>Terraria</h3><div class="pl">استیم · ساخت و بقا</div><a class="lnk" href="https://store.steampowered.com/search/?term=Terraria" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="steam pc" data-usd="9.99" data-price="$۹٫۹۹" data-n="Portal 2 پورتال"><h3>Portal 2</h3><div class="pl">استیم · پازل</div><a class="lnk" href="https://store.steampowered.com/search/?term=Portal%202" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-usd="0" data-price="رایگان" data-n="Fortnite فورتنایت"><h3>Fortnite</h3><div class="pl">Epic Games · شوتر بتل‌رویال</div><a class="lnk" href="https://store.epicgames.com/browse?q=Fortnite" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-usd="0" data-price="رایگان" data-n="Rocket League راکت لیگ"><h3>Rocket League</h3><div class="pl">Epic Games · مسابقه‌ای ماشینی</div><a class="lnk" href="https://store.epicgames.com/browse?q=Rocket%20League" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-usd="0" data-price="رایگان" data-n="Fall Guys فال گایز"><h3>Fall Guys</h3><div class="pl">Epic Games · پارتی و مسابقه‌ای</div><a class="lnk" href="https://store.epicgames.com/browse?q=Fall%20Guys" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="epic pc" data-s="Epic Games" data-usd="0" data-price="رایگان" data-n="Genshin Impact گنشین ایمپکت"><h3>Genshin Impact</h3><div class="pl">Epic Games · نقش‌آفرینی جهان‌باز</div><a class="lnk" href="https://store.epicgames.com/browse?q=Genshin%20Impact" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-usd="49.99" data-price="$۴۹٫۹۹" data-n="Diablo IV دیابلو"><h3>Diablo IV</h3><div class="pl">Battle.net · اکشن نقش‌آفرینی</div><a class="lnk" href="https://diablo4.blizzard.com/" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-usd="0" data-price="رایگان" data-n="Overwatch اورواچ"><h3>Overwatch</h3><div class="pl">Battle.net · شوتر قهرمان‌محور</div><a class="lnk" href="https://overwatch.blizzard.com/" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-usd="14.99" data-price="$۱۴٫۹۹ / ماه" data-n="World of Warcraft وارکرفت"><h3>World of Warcraft</h3><div class="pl">Battle.net · نقش‌آفرینی آنلاین</div><a class="lnk" href="https://worldofwarcraft.blizzard.com/" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
+    <div class="card prod" data-p="battlenet pc" data-s="Battle.net" data-usd="0" data-price="رایگان" data-n="Hearthstone هارت استون"><h3>Hearthstone</h3><div class="pl">Battle.net · کارتی</div><a class="lnk" href="https://hearthstone.blizzard.com/" target="_blank" rel="noopener" hidden>صفحه‌ی بازی</a></div>
   </div>
   <p id="none">بازی‌ای با این مشخصات پیدا نشد.</p>
 </section>
@@ -243,7 +245,6 @@ ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.c
     <a class="card" href="#"><div class="vid">▶</div><h3>گیم‌پلی ۱۰ دقیقه‌ای نبرد ستاره‌ها</h3><p>۱۰:۰۰</p></a>
     <a class="card" href="#"><div class="vid">▶</div><h3>معرفی سریع قلعه‌ی آتش</h3><p>۴:۳۰</p></a>
   </div>
-</section>
 
 <section id="review">
   <h2>نقد و بررسی: Grand Theft Auto VI</h2>
@@ -265,6 +266,7 @@ ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.c
 <section id="calendar">
   <h2>تقویم عرضه‌ی بازی‌های استیم</h2>
   <ul class="cal">
+    <li><span class="d" style="background:#1FA85A">۲۸ آبان</span><span>Grand Theft Auto VI</span><span class="pl" style="margin-inline-start:auto">نقش‌آفرینی</span></li>
     <li><span class="d">۱۰ آذر</span><span>Hela: Of Mice &amp; Magic</span><span class="pl" style="margin-inline-start:auto">ماجراجویی</span></li>
     <li><span class="d">۱۲ آذر</span><span>Warhammer 40,000: Dawn of War IV</span><span class="pl" style="margin-inline-start:auto">استراتژی</span></li>
     <li><span class="d">۱۲ آذر</span><span>Dragon Quest Monsters: The Withered World</span><span class="pl" style="margin-inline-start:auto">نقش‌آفرینی</span></li>
@@ -272,7 +274,6 @@ ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.c
     <li><span class="d">۱۹ آذر</span><span>Attack on Titan 3</span><span class="pl" style="margin-inline-start:auto">اکشن</span></li>
     <li><span class="d">۲۰ آذر</span><span>Path of Exile 2 (نسخه‌ی ۱.۰)</span><span class="pl" style="margin-inline-start:auto">اکشن نقش‌آفرینی</span></li>
   </ul>
-  <p class="pl">تاریخ‌ها از لیست‌های PC Gamer و GameSpot گرفته شده و ممکنه عوض بشه.</p>
 </section>
 
 <section id="play">
@@ -294,6 +295,7 @@ ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.c
   <button class="btn" id="co" type="button">پرداخت</button>
 </aside>
 <footer id="contact"><span>© گیم‌خونه</span><span>ارتباط با ما: hello@gamekhane.example</span></footer>
+<footer id="contact"><span> </span></span></span>شماره تماس : 0123456789</footer>
 </div>
 
 <script>
@@ -342,7 +344,7 @@ ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.c
   var cart={},dr=document.getElementById('dr'),ov=document.getElementById('ov'),cl=document.getElementById('cl');
   function fa(n){return String(n).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]})}
   function num(s){var t=s.replace(/[۰-۹]/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)}).replace(/[^\d]/g,'');return t?parseInt(t,10):0}
-  function money(n){return n?fa(n.toLocaleString('en-US'))+' تومان':'رایگان'}
+  function money(n){return n?'$'+fa(n.toFixed(2).replace('.','٫')):'رایگان'}
   function render(){
     var ks=Object.keys(cart),q=0,t=0,h='';
     ks.forEach(function(k){var it=cart[k];q+=it.q;t+=it.p*it.q;
@@ -350,9 +352,9 @@ ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.c
     cl.innerHTML=h;
     document.getElementById('ce').style.display=ks.length?'none':'block';
     document.getElementById('cc').textContent=fa(q);
-    var hu=ks.some(function(k){return cart[k].u});document.getElementById('ct').textContent=(t||!hu?money(t):'')+(hu?(t?' + ':'')+'قیمت‌ها در فروشگاه اصلی':'');
+    document.getElementById('ct').textContent=money(t)+(t&&window.tmn?' ≈ '+window.tmn(t)+' تومان':'');
   }
-  window.addCart=function(n,p){if(!cart[n])cart[n]={p:num(p),q:0,u:p.indexOf('قیمت در')===0,t:p};cart[n].q++;render()};
+  window.addCart=function(n,p){if(!cart[n])cart[n]={p:Number(p)||0,q:0};cart[n].q++;render()};
   cl.onclick=function(e){var b=e.target.closest('button');if(!b)return;var k=b.dataset.k,a=b.dataset.a;
     if(a==='+')cart[k].q++;else if(a==='-'){cart[k].q--;if(cart[k].q<1)delete cart[k]}else delete cart[k];render()};
   function open(){dr.classList.add('open');ov.classList.add('open');dr.setAttribute('aria-hidden','false');document.getElementById('cm').textContent=''}
@@ -455,25 +457,36 @@ ol.top li,.cal li{transition:transform .25s,border-color .25s}ol.top li:hover,.c
     var pp=c.querySelector('p');
     el('p','',d?d[1]:(pp?pp.textContent:''));
     if(d)el('p','good','مناسب برای: '+d[2]);
-    var a=c.querySelector('a.btn');if(a)mc.appendChild(a.cloneNode(true));
+    var a=c.querySelector('a.lnk');if(a){var l=a.cloneNode(true);l.hidden=false;l.className='pl';l.textContent='صفحه‌ی بازی در فروشگاه ↗';mc.appendChild(l)}
     var ad=c.querySelector('.add'),pr=c.querySelector('.price');
-    if(ad){if(pr)el('div','price',pr.textContent);var b=el('button','btn','افزودن به سبد');b.type='button';b.onclick=function(){window.addCart(h,pr?pr.textContent:'');b.textContent='اضافه شد ✓'}}
+    if(ad){if(pr)mc.appendChild(pr.cloneNode(true));var b=el('button','btn','افزودن به سبد');b.type='button';b.onclick=function(){window.addCart(h,c.dataset.usd);b.textContent='اضافه شد ✓'}}
     mo.classList.add('open');
   });
 })();
 (function(){
   document.querySelectorAll('.prod').forEach(function(c){
-    var a=c.querySelector('a.btn');if(!a)return;
+    var a=c.querySelector('a.lnk');if(!a)return;
     var h=c.querySelector('h3').textContent;
-    var p=document.createElement('div');p.className='price';p.textContent='قیمت در '+(c.dataset.s||'استیم');c.insertBefore(p,a);
+    var p=document.createElement('div');p.className='price';p.textContent=c.dataset.price||'';c.insertBefore(p,a);
     var b=document.createElement('button');b.type='button';b.className='btn add alt';b.textContent='افزودن به سبد';
-    b.onclick=function(){window.addCart(h,'قیمت در '+(c.dataset.s||'استیم'));b.textContent='اضافه شد ✓';setTimeout(function(){b.textContent='افزودن به سبد'},1000)};
+    b.onclick=function(){window.addCart(h,c.dataset.usd);b.textContent='اضافه شد ✓';setTimeout(function(){b.textContent='افزودن به سبد'},1000)};
     a.after(b);
   });
   var V=['Elden Ring','Cyberpunk 2077','Baldur\'s Gate 3','Red Dead Redemption 2','The Witcher 3','Hades'],h='';
   V.forEach(function(n,i){var c=i*55+230;
     h+='<a class="card" href="https://www.youtube.com/results?search_query='+encodeURIComponent(n+' official trailer')+'" target="_blank" rel="noopener"><div class="vid" style="background:linear-gradient(135deg,hsl('+c%360+',75%,48%),hsl('+(c+50)%360+',75%,34%))">▶</div><h3>تریلر رسمی '+n+'</h3><p>مشاهده در یوتیوب</p></a>'});
   document.querySelector('#videos .cards').innerHTML=h;
+})();
+(function(){
+  var RATE=268000;
+  function fa(n){return String(n).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]})}
+  window.tmn=function(usd){return fa((Math.round(usd*RATE/1000)*1000).toLocaleString('en-US'))};
+  document.querySelectorAll('.prod').forEach(function(c){
+    var u=parseFloat(c.dataset.usd),pr=c.querySelector('.price');
+    if(pr&&u>0){var sm=document.createElement('small');sm.className='tm2';
+      sm.textContent='≈ '+window.tmn(u)+' تومان'+((c.dataset.price||'').indexOf('ماه')>-1?' / ماه':'');
+      pr.appendChild(document.createTextNode(' '));pr.appendChild(sm)}
+  });
 })();
 </script>
 </body>
